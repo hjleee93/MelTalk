@@ -1,0 +1,23 @@
+{
+  "name": "image-uploader",
+  "version": "1.0.0",
+  "description": "image uploader and return image url",
+  "main": "app.ts",
+  "scripts": {
+    "dev": "tsx watch app.ts",
+    "start": "node dist/app.js",
+    "build": "tsc"
+  },
+  "author": "hyeonjeong lee",
+  "license": "ISC",
+  "dependencies": {
+    "@firebase/firestore": "^4.7.7",
+    "express": "^4.21.2"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.0",
+    "@types/node": "^22.13.1",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.3"
+  }
+}
