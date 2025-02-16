@@ -1,9 +1,9 @@
-import express from "express"
-import testRouter from './test'
+import { Router } from 'express'
+import authRouter from './auth'
 
-const router = express.Router();
+const router = Router();
 
-router.use("/tests", testRouter);
+router.use("/auth", authRouter)
 
 
 export default router;

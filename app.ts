@@ -1,6 +1,8 @@
 import express from "express"
 import router from "./routes"
+import dotenvFlow from 'dotenv-flow';
 
+dotenvFlow.config();
 const app = express();
 
 app.use("/api", router); // 모든 라우트에 /api prefix 추가
