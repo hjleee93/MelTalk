@@ -1,9 +1,10 @@
 import { Router } from 'express'
 import { getAuthCallback, getOAuthPermission } from '../controllers/authController';
+import { asyncHandler } from '../utils/errorHandler';
 
 const router = Router();
 
-router.get("/", getOAuthPermission);
+router.get("/", asyncHandler(getOAuthPermission));
 
 router.get("/callback",getAuthCallback);
 
