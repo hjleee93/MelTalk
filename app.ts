@@ -1,25 +1,12 @@
 import 'dotenv/config'
 import express from "express"
-import router from "./routes"
-import { initializeDatabase } from './database/sequelize';
-// import sequelize from "./database/sequelize";
+import router from './routes/index';
+import initDB from './database/database';
 
 const app = express();
 
 app.use("/api", router); // 모든 라우트에 /api prefix 추가
 
-
-
-// async function startDB() {
-//   try {
-//     await sequelize.authenticate();
-//     console.log('데이터베이스 연결 성공');
-//   } catch (error: any) {
-//     console.error('데이터베이스 연결 실패:', error);
-//     process.exit(1);
-//   }
-
-// }
 
 function startServer(port: number): void {
   const server = app.listen(port, () => {
@@ -39,8 +26,7 @@ function startServer(port: number): void {
 const initialPort = Number(process.env.SERVER_PORT) || 3000;
 
 async function main() {
-  
-  await initializeDatabase();
+  await initDB();
   startServer(initialPort);
 }
 
