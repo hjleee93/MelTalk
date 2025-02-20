@@ -15,6 +15,10 @@ class SequelizeManager {
       host: DB_HOST,
       port: DB_PORT,
       dialect: 'mysql',
+      define: {
+        timestamps: true,
+        underscored: true,
+      },
       logging: false,
       pool: {
         max: 5,

@@ -1,11 +1,11 @@
 import { Router } from 'express'
-import { getAuthCallback, getOAuthPermission } from '../controllers/authController';
-import { asyncHandler } from '../utils/errorHandler';
+import AuthController from '../controllers/authController';
+import { asyncHandler } from '../utils/errorHelper';
 
 const router = Router();
 
-router.get("/", asyncHandler(getOAuthPermission));
+router.get("/", asyncHandler(AuthController.getOAuthPermission));
 
-router.get("/callback",getAuthCallback);
+router.get("/callback",AuthController.getAuthCallback);
 
 export default router;
