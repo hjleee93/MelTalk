@@ -13,6 +13,9 @@ PASSWORD=디비 유저 패스워드
 HOST=디비 호스트
 PORT=디비 포트
 ENCRYPTION_KEY=토큰 암호화에 필요한 키
+PROJECT_ID=구글 클라우드 콘솔 프로젝트 ID
+TOPIC_NAME=주제 이름
+SUBSCRIPTION_NAME=구독 이름
 ```
 
 ## 기술 스택

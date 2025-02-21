@@ -5,6 +5,7 @@
     "target": "ES2023",
     "esModuleInterop": true,
     "moduleResolution": "node",
+    "resolveJsonModule": true,
   }
 }
 

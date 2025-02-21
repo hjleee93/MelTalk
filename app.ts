@@ -2,10 +2,13 @@ import 'dotenv/config'
 import express from "express"
 import router from './routes/index';
 import initDB from './database/database';
+import { errorMiddleware } from './middlewares/errorMiddleware';
+import { pubSubStart } from './utils/pubSubHandler';
 
 const app = express();
 
 app.use("/api", router); // 모든 라우트에 /api prefix 추가
+app.use(errorMiddleware);
 
 
 function startServer(port: number): void {
@@ -27,7 +30,10 @@ const initialPort = Number(process.env.SERVER_PORT) || 3000;
 
 async function main() {
   await initDB();
-  startServer(initialPort);
+  await Promise.all([
+    startServer(initialPort),
+    pubSubStart(),
+  ]);
 }
 
 main();
